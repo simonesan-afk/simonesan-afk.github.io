@@ -215,3 +215,90 @@ footer {
   main { padding: 20px 12px; }
   table th, table td { font-size: 0.9rem; }
 }
+/* ═══════════════════════════════════════════
+   🔥 NOSTROMO ENHANCEMENT v2.0
+   ═══════════════════════════════════════════ */
+
+/* 1. Scanline Effect (CRT Monitor) */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* 2. Button Glow on Hover */
+a[href*="hf.co"]:hover,
+.demo-button:hover {
+    text-shadow: 
+        0 0 10px #ff7700,
+        0 0 20px #ff7700,
+        0 0 30px #ff7700 !important;
+    box-shadow: 
+        0 0 20px rgba(255, 119, 0, 0.8),
+        inset 0 0 10px rgba(255, 119, 0, 0.4) !important;
+    transition: all 0.3s ease;
+}
+
+/* 3. Cursor Terminale */
+body {
+    cursor: crosshair; /* Fallback se SVG non funziona */
+}
+
+/* 4. Text Selection Arancione */
+::selection {
+    background: #ff7700;
+    color: #000;
+}
+
+::-moz-selection {
+    background: #ff7700;
+    color: #000;
+}
+
+/* 5. Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 6. Link Hover Effect */
+a {
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    text-shadow: 0 0 8px currentColor;
+    letter-spacing: 0.05em;
+}
+
+/* 7. Header Pulse Animation */
+h1 {
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.85; }
+}
+
+/* 8. Code Blocks Enhancement */
+code, pre {
+    background: rgba(255, 119, 0, 0.1);
+    border-left: 3px solid #ff7700;
+    padding: 2px 6px;
+}
+
+/* ═══════════════════════════════════════════
+   END ENHANCEMENTS
+   ═══════════════════════════════════════════ */
